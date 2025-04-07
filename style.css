@@ -83,8 +83,9 @@ textarea {
     width: 100%;
 }
 
-#encodeOutput #decodeInput {
-    min-height: 100px;
+#encodeOutput, #decodeInput {
+    min-height: 120px;
+    font-family: monospace;
 }
 
 button {
