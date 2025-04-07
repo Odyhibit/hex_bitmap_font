@@ -1,0 +1,153 @@
+:root {
+    --primary-color: #2c3e50;
+    --dark-bg: #1e1e1e;
+    --light-bg: #f5f5f5;
+    --text-color: #333;
+    --pixel-color: #39ff14;
+    --pixel-glow: rgba(57, 255, 20, 0.5);
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: var(--light-bg);
+    color: #333;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* Tab styling */
+.tabs {
+    display: flex;
+    border-bottom: 1px solid #ddd;
+}
+
+.tab-button {
+    padding: 10px 20px;
+    cursor: pointer;
+    background-color: #f1f1f1;
+    color: #1a252f;
+    border: none;
+    border-radius: 4px 4px 0 0;
+    font-weight: bold;
+    margin-right: 5px;
+}
+
+.tab-button.active {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.tab-content {
+    display: none;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-top: none;
+    border-radius: 0 0 4px 4px;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+/* Form styling */
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+textarea {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-family: inherit;
+    width: 100%;
+}
+
+#encodeOutput #decodeInput {
+    min-height: 100px;
+}
+
+button {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-right: 10px;
+}
+
+button:hover {
+    opacity: 0.9;
+}
+
+/* Canvas display styling */
+.display-container {
+    margin-top: 30px;
+    background-color: var(--dark-bg);
+    padding: 20px;
+    border-radius: 5px;
+    overflow-x: auto;
+}
+
+.canvas-wrapper {
+    position: relative;
+    overflow: hidden;
+}
+
+.display-controls {
+    margin-top: 15px;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.color-picker-container {
+    display: flex;
+    align-items: center;
+    color: #888;
+}
+
+.color-picker-container label {
+    margin-bottom: 0;
+    margin-right: 10px;
+}
+
+#pixelCanvas {
+    display: block;
+    margin: 0 auto;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .tabs {
+        flex-direction: column;
+    }
+
+    .display-controls {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}

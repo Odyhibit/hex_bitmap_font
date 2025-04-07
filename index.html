@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>5x7 Bitmap Font Encoder/Decoder</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>5x7 Bitmap Font Encoder/Decoder</h1>
+
+        <div class="tabs">
+            <button class="tab-button active" data-tab="encode">Encode</button>
+            <button class="tab-button" data-tab="decode">Decode</button>
+        </div>
+
+        <div class="tab-content active" id="encode">
+            <div class="form-group">
+                <label for="encodeInput">Text to Encode:</label>
+                <textarea id="encodeInput" placeholder="Enter text to encode"></textarea>
+            </div>
+
+            <button id="encodeButton">Encode to Hex</button>
+            <button id="encodeAndDisplayButton">Encode & Display</button>
+
+            <div class="form-group">
+                <label for="encodeOutput">Hex Output:</label>
+                <textarea id="encodeOutput" readonly></textarea>
+            </div>
+        </div>
+
+        <div class="tab-content" id="decode">
+            <div class="form-group">
+                <label for="decodeInput">Hex to Decode:</label>
+                <textarea id="decodeInput" placeholder="Enter hex values separated by spaces (e.g., 7f 09 05 03)"></textarea>
+            </div>
+
+            <button id="decodeButton">Display Text</button>
+
+            <div class="display-container">
+                <div class="canvas-wrapper">
+                    <canvas id="pixelCanvas"></canvas>
+                </div>
+
+                <div class="display-controls">
+                    <div class="color-picker-container">
+                        <label for="pixelColor">Pixel Color:</label>
+                        <input type="color" id="pixelColor" value="#39ff14">
+                    </div>
+
+                    <div class="color-picker-container">
+                        <label for="pixelSize">Pixel Size:</label>
+                        <input type="range" id="pixelSize" min="1" max="8" value="4">
+                    </div>
+
+                    <button id="toggleGridButton">Toggle Grid</button>
+                    <button id="savePngButton">Save as PNG</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="bit_font.js">
+
+    </script>
+</body>
+</html>
