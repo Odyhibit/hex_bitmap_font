@@ -1,3 +1,4 @@
+<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,6 +16,7 @@
             <button class="tab-button" data-tab="decode">Decode</button>
         </div>
 
+        <!-- ENCODE TAB -->
         <div class="tab-content active" id="encode">
             <div class="form-group">
                 <label for="encodeInput">Text to Encode:</label>
@@ -25,14 +27,31 @@
             <button id="encodeAndDisplayButton">Encode & Display</button>
 
             <div class="form-group">
-                <label for="encodeOutput">Hex Output:</label>
+                <label for="encodeFormat">Output Format:</label>
+                <select id="encodeFormat">
+                    <option value="hex" selected>Hex</option>
+                    <option value="base64">Base64</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="encodeOutput">Output:</label>
                 <textarea id="encodeOutput" readonly></textarea>
             </div>
         </div>
 
+        <!-- DECODE TAB -->
         <div class="tab-content" id="decode">
             <div class="form-group">
-                <label for="decodeInput">Hex to Decode:</label>
+                <label for="decodeFormat">Input Format:</label>
+                <select id="decodeFormat">
+                    <option value="hex" selected>Hex</option>
+                    <option value="base64">Base64</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="decodeInput">Input:</label>
                 <textarea id="decodeInput" placeholder="Enter hex values separated by spaces (e.g., 7f 09 05 03)"></textarea>
             </div>
 
@@ -42,18 +61,15 @@
                 <div class="canvas-wrapper">
                     <canvas id="pixelCanvas"></canvas>
                 </div>
-
                 <div class="display-controls">
                     <div class="color-picker-container">
                         <label for="pixelColor">Pixel Color:</label>
                         <input type="color" id="pixelColor" value="#39ff14">
                     </div>
-
                     <div class="color-picker-container">
                         <label for="pixelSize">Pixel Size:</label>
                         <input type="range" id="pixelSize" min="1" max="8" value="4">
                     </div>
-
                     <button id="toggleGridButton">Toggle Grid</button>
                     <button id="savePngButton">Save as PNG</button>
                 </div>
@@ -61,8 +77,6 @@
         </div>
     </div>
 
-    <script src="bit_font.js">
-
-    </script>
+    <script src="bit_font.js"></script>
 </body>
 </html>
