@@ -287,15 +287,6 @@ function matrixToHex(mat) {
 }
 
 
-
-
-// ─── CANVAS-DRAWING LOGIC: VERTICAL FLIP FIX ────────────────────────────────────
-//
-// We now draw each byte as a single column of 8 pixels. Instead of drawing
-// the MSB at the top (bit 7) and LSB at the bottom (bit 0), we “flip” it so
-// that the LSB is drawn at the top (row 0) and the MSB is drawn at the bottom (row 7).
-//
-
 function updateCanvas() {
     if (!displayData || displayData.length === 0) {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -318,9 +309,7 @@ function updateCanvas() {
         drawGrid();
     }
 
-    // Draw each byte (flipped vertically):
-    //  - We loop b = 0..7. Test bit (1 << (7 - b)) as before, but now draw
-    //    at y = (7 - b)*pixelSize so MSB (b=0) ends up at the bottom.
+    // Draw each byte :
     for (let i = 0; i < displayData.length; i++) {
         const byte = displayData[i];
         for (let b = 0; b < 8; b++) {
